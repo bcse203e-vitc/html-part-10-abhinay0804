@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pizza Booking</title>
+    <style>
+        body{
+            background-color: rgb(158, 92, 92);
+        }
+
+    </style>
+</head>
+<body>
+    <style>
+        #x{
+            align-items: center;
+            text-align: center;
+            justify-content: center;
+            margin-top: 100px;
+        }
+        h1,label{
+            margin-bottom: 100px;
+        }
+    </style>
+    <script>
+        function display(){
+            let a = document.getElementById("name").value;
+            let b = document.getElementById("num").value;
+            let c = document.querySelector('input[name="size"]:checked').value;
+            let d = document.getElementById("1").checked ? "Cheese" : "";
+            let e = document.getElementById("2").checked ? "Pepperoni" : "";
+            let f = document.getElementById("3").checked ? "Mushroom" : "";
+            document.getElementById("x").innerHTML = "";
+            document.getElementById("x").innerHTML = document.getElementById("x").innerHTML + "Booking Summary" + "<br><br>Customer Name : " + a + "<br><br>Contact Number : " + b + "<br><br>Pizza Size : " + c + "<br><br>Toppings Selected : " + d + " " + e + " " + f;
+        }
+    </script>
+    <div id="x">
+        <h1>Pizza Booking form</h1>
+        <form>
+            <label for="name">Customer Name</label>
+            <input id="name" type="text" required>
+            <br><br>
+            <label for="num">Contact Number</label>
+            <input id="num" type="tel" required>
+            <br><br>
+            <label for="size">Pizza Size</label>
+            <input type="radio" id="size1" name="size" value="Small"> Small
+            <input type="radio" id="size2" name="size" value="Medium"> Medium
+            <input type="radio" id="size3" name="size" value="Large"> Large
+            <br><br>
+            <p>Select Toppings</p>
+            <input type="checkbox" id="1" name="1" value="Cheese">
+            <label  for="1"> Cheese</label><br>
+            <input type="checkbox" id="2" name="2" value="Pepperoni">
+            <label  for="2"> Pepperoni</label><br>
+            <input  type="checkbox" id="3" name="3" value="Mushroom">
+            <label  for="3"> Mushroom</label><br><br>
+            <button type="button"  onclick="display()">Submit</button>
+        </form>
+    </div>
+</body>
+</html>

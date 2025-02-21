@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guess the Number</title>
+    <style>
+        body{
+            background-color: black;
+        }
+    </style>
+</head>
+<body>
+    <button style="margin-left: 600px;margin-top: 300px;" type="button" onclick="guess()">Start</button>
+    <script>
+        function guess(){
+            while(1){
+                let n=prompt("Enter your guess : ");
+                let a=Math.floor(Math.random()*50.6);
+                a=Math.floor(a);
+                if(n==a){
+                    prompt("Woowww!! that's correct");
+                    break;
+                }
+            }
+           /* do{
+                let n=prompt("Enter your guess : ");
+                let a=Math.floor(Math.random()*50.6);
+                a=Math.floor(a);
+                if(n==a){
+                    prompt("Woowww!! that's correct");
+                    break;
+                }
+            }while(1);*/
+        }
+    </script>
+</body>
+</html>

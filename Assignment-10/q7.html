@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Word/Character Counter</title>
+    <style>
+        body{
+            align-items: center;
+            text-align: center;
+            justify-content: center;
+        }
+        #txt{
+            margin-top: 100px;
+        }
+    </style>
+</head>
+<body>
+    <textarea id="txt" oninput="count()" maxlength="200"></textarea>
+    <p>Words: <span id="wordCount">0</span></p>
+    <p>Characters: <span id="charCount">0</span></p>
+    <script>
+        function count() {
+            let txt = document.getElementById("txt").value;
+            let words = txt.trim().split(/\s+/).filter(Boolean).length;
+            let chars = txt.length;
+            document.getElementById("wordCount").innerText = words;
+            document.getElementById("charCount").innerText = chars;
+            if (chars > 200) {
+                alert("Character limit exceeded!");
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Drawing App</title>
+    <style>
+        body{
+            align-items: center;
+            text-align: center;
+            justify-content: center;
+        }
+        #canvas{
+            margin-top: 100px;
+        }
+    </style>
+</head>
+<body>
+    <canvas id="canvas" width="500" height="500" style="border:1px solid black;"></canvas>
+    <br>
+    <button onclick="clearCanvas()">Clear Canvas</button>
+
+    <script>
+        let canvas = document.getElementById("canvas");
+        let ctx = canvas.getContext("2d");
+        let drawing = false;
+
+        canvas.addEventListener("mousedown", () => drawing = true);
+        canvas.addEventListener("mouseup", () => drawing = false);
+        canvas.addEventListener("mousemove", draw);
+
+        function draw(e) {
+            if (!drawing) return;
+            ctx.fillStyle = "black";
+            ctx.fillRect(e.offsetX, e.offsetY, 5, 5);
+        }
+
+        function clearCanvas() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+        }
+    </script>
+</body>
+</html>
